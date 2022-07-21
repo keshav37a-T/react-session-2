@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Composition from "./components/Composition";
+import LiftingStateUp from "./components/LiftingStateUp";
+import UserContext from "./components/Context/UserContext";
+import LoginHelper from "./components/Context/LoginHelper";
+import UserConsumer from "./components/Context/UserConsumer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserContext>
+      <div>
+        <UserConsumer />
+        <div>Topics</div>
+        <Composition />
+        <LiftingStateUp />
+        <LoginHelper />
+      </div>
+    </UserContext>
   );
 }
 
